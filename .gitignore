@@ -1,0 +1,16 @@
+# Flutter
+**/build/
+**/.dart_tool/
+**/.packages
+pubspec.lock
+
+# Node.js
+node_modules/
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pkl
+env/
+.venv/
