@@ -19,38 +19,19 @@ class ShopRadarApp extends StatelessWidget {
         brightness: Brightness.light,
         colorScheme: const ColorScheme(
           brightness: Brightness.light,
-          primary: Color(0xFF6A1B9A), // Deep Purple
+          primary: Color(0xFF2979FF), // Royal Blue
           onPrimary: Colors.white,
-          secondary: Color(0xFF00BFA5), // Teal Accent
+          secondary: Color(0xFF2DD4BF), // Turquoise
           onSecondary: Colors.white,
-          background: Color(0xFFF9F9F9), // Light background
-          onBackground: Color(0xFF212121), // Main text
+          background: Color(0xFFF7F8FA), // Light background
+          onBackground: Color(0xFF232136), // Main text
           surface: Color(0xFFFFFFFF), // Cards, surfaces
-          onSurface: Color(0xFF212121),
-          error: Color(0xFFFF5252),
+          onSurface: Color(0xFF232136),
+          error: Color(0xFFF44336),
           onError: Colors.white,
         ),
         textTheme: GoogleFonts.poppinsTextTheme(),
       ),
-      darkTheme: ThemeData(
-        useMaterial3: true,
-        brightness: Brightness.dark,
-        colorScheme: const ColorScheme(
-          brightness: Brightness.dark,
-          primary: Color(0xFF2979FF), // Royal Blue
-          onPrimary: Colors.white,
-          secondary: Color(0xFF536DFE), // Light Indigo
-          onSecondary: Colors.white,
-          background: Color(0xFF121212), // Dark Slate Gray
-          onBackground: Color(0xFFE0E0E0), // Light Gray text
-          surface: Color(0xFF1E1E1E), // Charcoal Gray
-          onSurface: Color(0xFFE0E0E0),
-          error: Color(0xFFD32F2F), // Crimson Red
-          onError: Colors.white,
-        ),
-        textTheme: GoogleFonts.poppinsTextTheme(ThemeData(brightness: Brightness.dark).textTheme),
-      ),
-      themeMode: ThemeMode.system,
       home: const AuthScreen(),
     );
   }
