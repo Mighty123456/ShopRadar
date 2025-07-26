@@ -317,18 +317,7 @@ class _SignInForm extends StatelessWidget {
           child: Text('Sign In', style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 16)),
           ),
         const SizedBox(height: 14),
-        // Shop Now Button (Outlined)
-        OutlinedButton(
-            onPressed: () {},
-          style: OutlinedButton.styleFrom(
-            side: const BorderSide(color: Color(0xFF2DD4BF), width: 2),
-            foregroundColor: const Color(0xFF2DD4BF),
-              padding: const EdgeInsets.symmetric(vertical: 16),
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
-          ),
-          child: Text('Shop Now', style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: const Color(0xFF2DD4BF), fontSize: 16)),
-        ),
-        const SizedBox(height: 18),
+        // Remove 'Shop Now' button
         // Social Login Buttons
           const SocialLoginButtons(),
         ],
