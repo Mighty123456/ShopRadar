@@ -95,12 +95,12 @@ class _RoleOption extends StatelessWidget {
           ),
           boxShadow: selected
               ? [
-                  BoxShadow(
-                    color: color.withOpacity(0.15),
-                    blurRadius: 16,
-                    offset: const Offset(0, 6),
-                  ),
-                ]
+            BoxShadow(
+              color: color.withOpacity(0.15),
+              blurRadius: 16,
+              offset: const Offset(0, 6),
+            ),
+          ]
               : [],
         ),
         child: Row(

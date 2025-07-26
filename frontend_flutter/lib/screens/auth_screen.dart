@@ -58,13 +58,13 @@ class _AuthScreenState extends State<AuthScreen> with SingleTickerProviderStateM
                 key: ValueKey(isDark ? 'dark' : 'light'),
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                    colors: [
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
                       Color(0xFFF7F8FA),
                       Color(0xFFFFFFFF),
                     ],
-                  ),
+                        ),
                 ),
               ),
             ),
@@ -110,8 +110,8 @@ class _AuthScreenState extends State<AuthScreen> with SingleTickerProviderStateM
                               ),
                               child: Padding(
                                 padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 32),
-                                child: Column(
-                                  children: [
+                              child: Column(
+                                children: [
                                     // Custom Tab Bar
                                     Container(
                                       height: 48,
@@ -120,47 +120,47 @@ class _AuthScreenState extends State<AuthScreen> with SingleTickerProviderStateM
                                         borderRadius: BorderRadius.circular(24),
                                       ),
                                       child: Row(
-                                        children: [
-                                          Expanded(
-                                            child: GestureDetector(
-                                              onTap: () {
-                                                if (!isSignIn) toggleAuthMode();
-                                              },
-                                              child: AnimatedContainer(
-                                                duration: const Duration(milliseconds: 300),
-                                                decoration: BoxDecoration(
+                                    children: [
+                                      Expanded(
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            if (!isSignIn) toggleAuthMode();
+                                          },
+                                          child: AnimatedContainer(
+                                            duration: const Duration(milliseconds: 300),
+                                            decoration: BoxDecoration(
                                                   color: isSignIn ? const Color(0xFF2979FF) : Colors.transparent,
                                                   borderRadius: BorderRadius.circular(24),
-                                                ),
-                                                child: Center(
-                                                  child: Text(
-                                                    'Sign In',
-                                                    style: GoogleFonts.poppins(
-                                                      fontWeight: FontWeight.w600,
+                                            ),
+                                            child: Center(
+                                              child: Text(
+                                                'Sign In',
+                                                style: GoogleFonts.poppins(
+                                                  fontWeight: FontWeight.w600,
                                                       fontSize: 16,
                                                       color: isSignIn ? Colors.white : Color(0xFF232136),
-                                                    ),
-                                                  ),
                                                 ),
                                               ),
                                             ),
                                           ),
-                                          Expanded(
-                                            child: GestureDetector(
-                                              onTap: () {
-                                                if (isSignIn) toggleAuthMode();
-                                              },
-                                              child: AnimatedContainer(
-                                                duration: const Duration(milliseconds: 300),
-                                                decoration: BoxDecoration(
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            if (isSignIn) toggleAuthMode();
+                                          },
+                                          child: AnimatedContainer(
+                                            duration: const Duration(milliseconds: 300),
+                                            decoration: BoxDecoration(
                                                   color: !isSignIn ? const Color(0xFF2979FF) : Colors.transparent,
                                                   borderRadius: BorderRadius.circular(24),
-                                                ),
-                                                child: Center(
-                                                  child: Text(
-                                                    'Sign Up',
-                                                    style: GoogleFonts.poppins(
-                                                      fontWeight: FontWeight.w600,
+                                            ),
+                                            child: Center(
+                                              child: Text(
+                                                'Sign Up',
+                                                style: GoogleFonts.poppins(
+                                                  fontWeight: FontWeight.w600,
                                                       fontSize: 16,
                                                       color: !isSignIn ? Colors.white : Color(0xFF232136),
                                                     ),
@@ -171,25 +171,25 @@ class _AuthScreenState extends State<AuthScreen> with SingleTickerProviderStateM
                                           ),
                                         ],
                                       ),
-                                    ),
-                                    AnimatedSwitcher(
-                                      duration: const Duration(milliseconds: 500),
-                                      transitionBuilder: (child, animation) => FadeTransition(opacity: animation, child: child),
-                                      child: isSignIn
+                                  ),
+                                  AnimatedSwitcher(
+                                    duration: const Duration(milliseconds: 500),
+                                    transitionBuilder: (child, animation) => FadeTransition(opacity: animation, child: child),
+                                    child: isSignIn
                                           ? Column(
-                                              children: [
-                                                const SizedBox(height: 28),
-                                                _SignInForm(key: const ValueKey('signIn')),
-                                              ],
-                                            )
+                                        children: [
+                                          const SizedBox(height: 28),
+                                          _SignInForm(key: const ValueKey('signIn')),
+                                        ],
+                                      )
                                           : Column(
-                                              children: [
-                                                const SizedBox(height: 28),
-                                                _SignUpForm(key: const ValueKey('signUp')),
-                                              ],
-                                            ),
-                                    ),
-                                  ],
+                                        children: [
+                                          const SizedBox(height: 28),
+                                          _SignUpForm(key: const ValueKey('signUp')),
+                                        ],
+                                      ),
+                                  ),
+                                ],
                                 ),
                               ),
                             ),
@@ -224,19 +224,19 @@ class _SignInForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
         // Email
-        TextFormField(
-          decoration: InputDecoration(
+          TextFormField(
+            decoration: InputDecoration(
             filled: true,
             fillColor: const Color(0xFFF7F8FA),
-            labelText: 'Email',
-            labelStyle: GoogleFonts.poppins(
+              labelText: 'Email',
+              labelStyle: GoogleFonts.poppins(
               color: Color(0xFF6B7280),
               fontWeight: FontWeight.w500,
               fontSize: 16,
-            ),
+              ),
             prefixIcon: const Icon(Icons.email_outlined, color: Color(0xFF6B7280)),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(14),
@@ -251,22 +251,22 @@ class _SignInForm extends StatelessWidget {
             color: Color(0xFF232136),
             fontWeight: FontWeight.w500,
             fontSize: 16,
-          ),
-          keyboardType: TextInputType.emailAddress,
+            ),
+            keyboardType: TextInputType.emailAddress,
           cursorColor: const Color(0xFF2979FF),
-        ),
+          ),
         const SizedBox(height: 18),
         // Password
-        TextFormField(
-          decoration: InputDecoration(
+          TextFormField(
+            decoration: InputDecoration(
             filled: true,
             fillColor: const Color(0xFFF7F8FA),
-            labelText: 'Password',
-            labelStyle: GoogleFonts.poppins(
+              labelText: 'Password',
+              labelStyle: GoogleFonts.poppins(
               color: Color(0xFF6B7280),
               fontWeight: FontWeight.w500,
               fontSize: 16,
-            ),
+              ),
             prefixIcon: const Icon(Icons.lock_outline, color: Color(0xFF6B7280)),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(14),
@@ -281,8 +281,8 @@ class _SignInForm extends StatelessWidget {
             color: Color(0xFF232136),
             fontWeight: FontWeight.w500,
             fontSize: 16,
-          ),
-          obscureText: true,
+            ),
+            obscureText: true,
           cursorColor: const Color(0xFF2979FF),
         ),
         // Forgot Password
@@ -305,33 +305,33 @@ class _SignInForm extends StatelessWidget {
           ),
         ),
         // Sign In Button
-        ElevatedButton(
-          onPressed: () {},
-          style: ElevatedButton.styleFrom(
+          ElevatedButton(
+            onPressed: () {},
+            style: ElevatedButton.styleFrom(
             backgroundColor: const Color(0xFF2979FF),
             foregroundColor: Colors.white,
-            padding: const EdgeInsets.symmetric(vertical: 16),
+              padding: const EdgeInsets.symmetric(vertical: 16),
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
             elevation: 2,
-          ),
+            ),
           child: Text('Sign In', style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 16)),
-        ),
+          ),
         const SizedBox(height: 14),
         // Shop Now Button (Outlined)
         OutlinedButton(
-          onPressed: () {},
+            onPressed: () {},
           style: OutlinedButton.styleFrom(
-            side: const BorderSide(color: Color(0xFF2979FF), width: 2),
-            foregroundColor: Colors.white,
-            padding: const EdgeInsets.symmetric(vertical: 16),
+            side: const BorderSide(color: Color(0xFF2DD4BF), width: 2),
+            foregroundColor: const Color(0xFF2DD4BF),
+              padding: const EdgeInsets.symmetric(vertical: 16),
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
           ),
-          child: Text('Shop Now', style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 16)),
+          child: Text('Shop Now', style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: const Color(0xFF2DD4BF), fontSize: 16)),
         ),
         const SizedBox(height: 18),
         // Social Login Buttons
-        const SocialLoginButtons(),
-      ],
+          const SocialLoginButtons(),
+        ],
     );
   }
 }
@@ -350,14 +350,14 @@ class _SignUpFormState extends State<_SignUpForm> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: [
-        // Name
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+        // Name (for both User and Shop Owner)
         TextFormField(
           decoration: InputDecoration(
             filled: true,
             fillColor: const Color(0xFFF7F8FA),
-            labelText: 'Name',
+            labelText: selectedRole == 'user' ? 'Full Name' : 'Owner Name',
             labelStyle: GoogleFonts.poppins(
               color: Color(0xFF6B7280),
               fontWeight: FontWeight.w500,
@@ -382,7 +382,133 @@ class _SignUpFormState extends State<_SignUpForm> {
           cursorColor: const Color(0xFF2979FF),
         ),
         const SizedBox(height: 18),
-        // Email
+        
+        // Shop-specific fields (only for Shop Owner)
+        if (selectedRole == 'shop') ...[
+          // Shop Name
+          TextFormField(
+            decoration: InputDecoration(
+              filled: true,
+              fillColor: const Color(0xFFF7F8FA),
+              labelText: 'Shop Name',
+              labelStyle: GoogleFonts.poppins(
+                color: Color(0xFF6B7280),
+                fontWeight: FontWeight.w500,
+                fontSize: 16,
+              ),
+              prefixIcon: const Icon(Icons.store, color: Color(0xFF6B7280)),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(14),
+                borderSide: const BorderSide(color: Color(0xFFE5E7EB)),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(14),
+                borderSide: const BorderSide(color: Color(0xFF2979FF), width: 2),
+              ),
+            ),
+            style: GoogleFonts.poppins(
+              color: Color(0xFF232136),
+              fontWeight: FontWeight.w500,
+              fontSize: 16,
+            ),
+            cursorColor: const Color(0xFF2979FF),
+          ),
+          const SizedBox(height: 18),
+          
+          // Business Type
+          TextFormField(
+            decoration: InputDecoration(
+              filled: true,
+              fillColor: const Color(0xFFF7F8FA),
+              labelText: 'Business Type',
+              labelStyle: GoogleFonts.poppins(
+                color: Color(0xFF6B7280),
+                fontWeight: FontWeight.w500,
+                fontSize: 16,
+              ),
+              prefixIcon: const Icon(Icons.business, color: Color(0xFF6B7280)),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(14),
+                borderSide: const BorderSide(color: Color(0xFFE5E7EB)),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(14),
+                borderSide: const BorderSide(color: Color(0xFF2979FF), width: 2),
+              ),
+            ),
+            style: GoogleFonts.poppins(
+              color: Color(0xFF232136),
+              fontWeight: FontWeight.w500,
+              fontSize: 16,
+            ),
+            cursorColor: const Color(0xFF2979FF),
+          ),
+          const SizedBox(height: 18),
+          
+          // Phone Number
+          TextFormField(
+            decoration: InputDecoration(
+              filled: true,
+              fillColor: const Color(0xFFF7F8FA),
+              labelText: 'Phone Number',
+              labelStyle: GoogleFonts.poppins(
+                color: Color(0xFF6B7280),
+                fontWeight: FontWeight.w500,
+                fontSize: 16,
+              ),
+              prefixIcon: const Icon(Icons.phone, color: Color(0xFF6B7280)),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(14),
+                borderSide: const BorderSide(color: Color(0xFFE5E7EB)),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(14),
+                borderSide: const BorderSide(color: Color(0xFF2979FF), width: 2),
+              ),
+            ),
+            style: GoogleFonts.poppins(
+              color: Color(0xFF232136),
+              fontWeight: FontWeight.w500,
+              fontSize: 16,
+            ),
+            keyboardType: TextInputType.phone,
+            cursorColor: const Color(0xFF2979FF),
+          ),
+          const SizedBox(height: 18),
+          
+          // Address
+          TextFormField(
+            decoration: InputDecoration(
+              filled: true,
+              fillColor: const Color(0xFFF7F8FA),
+              labelText: 'Shop Address',
+              labelStyle: GoogleFonts.poppins(
+                color: Color(0xFF6B7280),
+                fontWeight: FontWeight.w500,
+                fontSize: 16,
+              ),
+              prefixIcon: const Icon(Icons.location_on, color: Color(0xFF6B7280)),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(14),
+                borderSide: const BorderSide(color: Color(0xFFE5E7EB)),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(14),
+                borderSide: const BorderSide(color: Color(0xFF2979FF), width: 2),
+              ),
+            ),
+            style: GoogleFonts.poppins(
+              color: Color(0xFF232136),
+              fontWeight: FontWeight.w500,
+              fontSize: 16,
+            ),
+            maxLines: 2,
+            cursorColor: const Color(0xFF2979FF),
+          ),
+          const SizedBox(height: 18),
+        ],
+        
+        // Email (for both)
         TextFormField(
           decoration: InputDecoration(
             filled: true,
@@ -412,7 +538,8 @@ class _SignUpFormState extends State<_SignUpForm> {
           cursorColor: const Color(0xFF2979FF),
         ),
         const SizedBox(height: 18),
-        // Password
+        
+        // Password (for both)
         TextFormField(
           decoration: InputDecoration(
             filled: true,
@@ -440,64 +567,61 @@ class _SignUpFormState extends State<_SignUpForm> {
           ),
           obscureText: true,
           cursorColor: const Color(0xFF2979FF),
-        ),
+          ),
         const SizedBox(height: 18),
+        
         // Role Selector
-        RoleSelector(
-          selectedRole: selectedRole,
-          onChanged: (role) => setState(() => selectedRole = role),
-        ),
+          RoleSelector(
+            selectedRole: selectedRole,
+            onChanged: (role) => setState(() => selectedRole = role),
+          ),
         const SizedBox(height: 18),
+        
         // Terms & Conditions
-        Row(
-          children: [
-            Checkbox(
-              value: agreeToTerms,
-              onChanged: (v) => setState(() => agreeToTerms = v ?? false),
+          Row(
+            children: [
+              Checkbox(
+                value: agreeToTerms,
+                onChanged: (v) => setState(() => agreeToTerms = v ?? false),
               activeColor: const Color(0xFF2979FF),
-              checkColor: const Color(0xFF23272F),
-            ),
-            Expanded(
-              child: Text(
-                'I agree to the Terms & Conditions',
-                style: GoogleFonts.poppins(
+              checkColor: Colors.white,
+              ),
+              Expanded(
+                child: Text(
+                  'I agree to the Terms & Conditions',
+                  style: GoogleFonts.poppins(
                   color: const Color(0xFF2979FF),
                   fontWeight: FontWeight.w500,
                   fontSize: 14,
+                  ),
                 ),
               ),
-            ),
-          ],
-        ),
+            ],
+          ),
         const SizedBox(height: 18),
+        
         // Sign Up Button
-        ElevatedButton(
-          onPressed: agreeToTerms ? () {} : null,
-          style: ElevatedButton.styleFrom(
+          ElevatedButton(
+            onPressed: agreeToTerms ? () {} : null,
+            style: ElevatedButton.styleFrom(
             backgroundColor: const Color(0xFF2979FF),
             foregroundColor: Colors.white,
-            padding: const EdgeInsets.symmetric(vertical: 16),
+              padding: const EdgeInsets.symmetric(vertical: 16),
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
             elevation: 2,
+            ),
+          child: Text(
+            selectedRole == 'user' ? 'Sign Up' : 'Register Shop',
+            style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 16)
           ),
-          child: Text('Sign Up', style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 16)),
-        ),
+          ),
         const SizedBox(height: 14),
-        // Apply Filter Button (Outlined)
-        OutlinedButton(
-          onPressed: agreeToTerms ? () {} : null,
-          style: OutlinedButton.styleFrom(
-            side: const BorderSide(color: Color(0xFF2979FF), width: 2),
-            foregroundColor: Colors.white,
-            padding: const EdgeInsets.symmetric(vertical: 16),
-            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
-          ),
-          child: Text('Apply Filter', style: GoogleFonts.poppins(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 16)),
-        ),
-        const SizedBox(height: 18),
+        
+        // Remove secondary button (Apply Filter/Add Products)
+        
         // Social Login Buttons
-        const SocialLoginButtons(),
-      ],
+          const SocialLoginButtons(),
+        ],
     );
   }
 } 
