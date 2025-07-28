@@ -6,7 +6,7 @@ const blackListTokenModel = require("../models/blacklistToken.model");
 module.exports.signupUser = async(req,res,next)=>{
     const errors=validationResult(req);
     if(!errors.isEmpty()){
-        return res.send(400).json({errors:errors.array()});
+        return res.status(400).json({errors:errors.array()});
     }
     const {name, email, password}=req.body;
 
@@ -32,7 +32,7 @@ module.exports.loginUser= async(req,res,next)=>{
     }
     const {email,password}=req.body;
 
-    const user=await user.Model.findOne({email:email}).select("+password");
+    const user=await userModel.findOne({email:email}).select("+password");
     if(!user){
         return res.status(404).json({message:"Invalid email or password"});
     }
@@ -48,11 +48,11 @@ module.exports.loginUser= async(req,res,next)=>{
 }
 
 module.exports.getUserProfile = async(req,res,next)=>{
-    res.status(400).json(req.user);
+    res.status(200).json(req.user);
 }
 
 module.exports.logoutUser = async(req,res,next)=>{
-    res.clearcookie("token");
+    res.clearCookie("token");
     const token=req.cookies.token || req.headers.authorization.split(' ')[1];
 
     await blackListTokenModel.create({token});
