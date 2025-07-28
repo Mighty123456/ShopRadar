@@ -5,14 +5,13 @@ import 'package:google_fonts/google_fonts.dart';
 class RoleSelector extends StatelessWidget {
   final String selectedRole;
   final ValueChanged<String> onChanged;
-  const RoleSelector({Key? key, required this.selectedRole, required this.onChanged}) : super(key: key);
+  const RoleSelector({super.key, required this.selectedRole, required this.onChanged});
 
   @override
   Widget build(BuildContext context) {
     // Professional light palette
     const blue = Color(0xFF2979FF);
     const turquoise = Color(0xFF2DD4BF);
-    const white = Color(0xFFFFFFFF);
     const gray = Color(0xFF6B7280);
     const lightBlueBg = Color(0xFFE3F0FF);
     const lightTurquoiseBg = Color(0xFFE0FCF8);
@@ -63,7 +62,6 @@ class _RoleOption extends StatelessWidget {
   final Color selectedBorder;
   final Color unselectedBorder;
   const _RoleOption({
-    Key? key,
     required this.icon,
     required this.label,
     required this.selected,
@@ -74,7 +72,7 @@ class _RoleOption extends StatelessWidget {
     required this.unselectedBg,
     required this.selectedBorder,
     required this.unselectedBorder,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -96,7 +94,7 @@ class _RoleOption extends StatelessWidget {
           boxShadow: selected
               ? [
             BoxShadow(
-              color: color.withOpacity(0.15),
+              color: color.withValues(alpha: 0.15),
               blurRadius: 16,
               offset: const Offset(0, 6),
             ),

@@ -3,7 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SocialLoginButtons extends StatelessWidget {
-  const SocialLoginButtons({Key? key}) : super(key: key);
+  const SocialLoginButtons({super.key});
 
   @override
   Widget build(BuildContext context) {

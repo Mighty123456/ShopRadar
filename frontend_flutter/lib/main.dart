@@ -7,7 +7,7 @@ void main() {
 }
 
 class ShopRadarApp extends StatelessWidget {
-  const ShopRadarApp({Key? key}) : super(key: key);
+  const ShopRadarApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +23,8 @@ class ShopRadarApp extends StatelessWidget {
           onPrimary: Colors.white,
           secondary: Color(0xFF2DD4BF), // Turquoise
           onSecondary: Colors.white,
-          background: Color(0xFFF7F8FA), // Light background
-          onBackground: Color(0xFF232136), // Main text
-          surface: Color(0xFFFFFFFF), // Cards, surfaces
-          onSurface: Color(0xFF232136),
+          surface: Color(0xFFF7F8FA), // Light background
+          onSurface: Color(0xFF232136), // Main text
           error: Color(0xFFF44336),
           onError: Colors.white,
         ),

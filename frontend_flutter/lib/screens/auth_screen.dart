@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 import '../widgets/social_login_buttons.dart';
 import '../widgets/role_selector.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AuthScreen extends StatefulWidget {
-  const AuthScreen({Key? key}) : super(key: key);
+  const AuthScreen({super.key});
 
   @override
   State<AuthScreen> createState() => _AuthScreenState();
@@ -44,8 +43,6 @@ class _AuthScreenState extends State<AuthScreen> with SingleTickerProviderStateM
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
-    final textTheme = theme.textTheme;
     final isDark = theme.brightness == Brightness.dark;
     return Scaffold(
       body: Stack(
@@ -87,11 +84,18 @@ class _AuthScreenState extends State<AuthScreen> with SingleTickerProviderStateM
                               tag: 'logo',
                               child: Text(
                                 'SHOPRADAR',
-                                style: GoogleFonts.orbitron(
-                                  fontSize: 32,
-                                  fontWeight: FontWeight.bold,
+                                style: GoogleFonts.poppins(
+                                  fontSize: 44,
+                                  fontWeight: FontWeight.w700,
                                   color: Color(0xFF2979FF),
-                                  letterSpacing: 2.5,
+                                  letterSpacing: 5,
+                                  shadows: [
+                                    Shadow(
+                                      color: Colors.black12,
+                                      blurRadius: 4,
+                                      offset: Offset(0, 2),
+                                    ),
+                                  ],
                                 ),
                               ),
                             ),
@@ -102,7 +106,7 @@ class _AuthScreenState extends State<AuthScreen> with SingleTickerProviderStateM
                                 borderRadius: BorderRadius.circular(28),
                                 boxShadow: [
                                   BoxShadow(
-                                    color: Colors.black.withOpacity(0.06),
+                                    color: Colors.black.withValues(alpha: 0.06),
                                     blurRadius: 24,
                                     offset: const Offset(0, 8),
                                   ),
@@ -219,7 +223,7 @@ class _AuthScreenState extends State<AuthScreen> with SingleTickerProviderStateM
 }
 
 class _SignInForm extends StatelessWidget {
-  const _SignInForm({Key? key}) : super(key: key);
+  const _SignInForm({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -326,7 +330,7 @@ class _SignInForm extends StatelessWidget {
 }
 
 class _SignUpForm extends StatefulWidget {
-  const _SignUpForm({Key? key}) : super(key: key);
+  const _SignUpForm({super.key});
 
   @override
   State<_SignUpForm> createState() => _SignUpFormState();
