@@ -8,7 +8,7 @@ class ApiService {
    static const String baseUrl = 'http://localhost:3000'; // For iOS simulator
  // static const String baseUrl = 'http://192.168.6.56:3000'; // For physical device
   // Use network configuration helper
-  static String get baseUrl => NetworkConfig.baseUrl;
+  //static String get baseUrl => NetworkConfig.baseUrl;
   
   // Test connectivity before making requests
   static Future<bool> _testConnectivity() async {
