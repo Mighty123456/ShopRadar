@@ -3,9 +3,9 @@ import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
 
 class ApiService {
-  static const String baseUrl = 'http://10.0.2.2:3000'; // For Android emulator
+  // static const String baseUrl = 'http://10.0.2.2:3000'; // For Android emulator
   // static const String baseUrl = 'http://localhost:3000'; // For iOS simulator
-  // static const String baseUrl = 'http://YOUR_IP_ADDRESS:3000'; // For physical device
+  static const String baseUrl = 'http://192.168.6.56:3000'; // For physical device
 
   static Future<Map<String, String>> _getHeaders() async {
     final prefs = await SharedPreferences.getInstance();
